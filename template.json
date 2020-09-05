@@ -1,6 +1,4 @@
 {
-	"version": "2",
-	"templates": [
 		{
 			"categories": [
 				"Other",
@@ -927,5 +925,4 @@
 				}
 			]
 		},
-	]
 }
