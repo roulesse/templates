@@ -555,7 +555,7 @@
 					"default": "npm"
 				}
 			],
-			"image": "linuxserver/mariadb:latest",
+			"image": "jc21/mariadb-aria:latest",
 			"logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/mariadb-icon.png",
 			"name": "mariadb",
 			"platform": "linux",
