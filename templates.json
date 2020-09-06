@@ -170,37 +170,37 @@
 				{
 					"label": "STRICT_PORT_FORWARD",
 					"name": "STRICT_PORT_FORWARD",
-					"set": "no"
+					"default": "no"
 				},
 				{
 					"label": "VPN_PROV",
 					"name": "VPN_PROV",
-					"set": "custom"
+					"default": "custom"
 				},
 				{
 					"label": "VPN_PASS",
 					"name": "VPN_PASS",
-					"set": "à remplir"
+					"default": "à remplir"
 				},
 				{
 					"label": "VPN_USER",
 					"name": "VPN_USER",
-					"set": "rules"
+					"default": "rules"
 				},
 				{
 					"label": "LAN_NETWORK",
 					"name": "LAN_NETWORK",
-					"set": "192.168.1.240"
+					"default": "192.168.1.240"
 				},
 				{
 					"label": "ENABLE_PRIVOXY",
 					"name": "ENABLE_PRIVOXY",
-					"set": "yes"
+					"default": "yes"
 				},
 				{
 					"label": "VPN_ENABLED",
 					"name": "VPN_ENABLED",
-					"set": "yes"
+					"default": "yes"
 				}
 			],
 			"image": "binhex/arch-delugevpn:latest",
@@ -252,6 +252,7 @@
 			"logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/deluge-icon.png",
 			"namme": "deluge",
 			"platform": "linux",
+			"network": "bridgecustom",
 			"restart_policy": "unless-stopped",
 			"title": "Deluge",
 			"type": 1,
@@ -293,6 +294,7 @@
 			"logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/emby.png",
 			"name": "Emby",
 			"platform": "linux",
+			"network": "host",
 			"ports": [
 				"8096:8096/tcp",
 				"8920:8920/tcp"
@@ -337,6 +339,7 @@
 			"logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/jacket-icon.png",
 			"name": "jackett",
 			"platform": "linux",
+			"network": "bridgecustom",
 			"ports": [
 				"9117:9117/tcp"
 			],
@@ -381,6 +384,7 @@
 			"logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/jellyfin.png",
 			"name": "jellyfin",
 			"platform": "linux",
+			"network": "bridgecustom",
 			"ports": [
 				"8096:8096/tcp",
 				"8920:8920/tcp"
@@ -424,6 +428,7 @@
 			"logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/kodi-icon.png",
 			"name": "kodi-headless",
 			"platform": "linux",
+			"network": "bridgecustom",
 			"ports": [
 				"8080/tcp",
 				"9777/udp"
@@ -459,6 +464,7 @@
 			"logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/lazylibrarian-icon.png",
 			"name": "lazylibrarian",
 			"platform": "linux",
+			"network": "bridgecustom",
 			"ports": [
 				"5299:5299/tcp"
 			],
@@ -504,6 +510,7 @@
 			"logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/mariadb-icon.png",
 			"name": "mariadb",
 			"platform": "linux",
+			"network": "bridgecustom",
 			"ports": [
 				"3306:3306/tcp"
 			],
@@ -539,6 +546,7 @@
 			"logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/mylar-icon.png",
 			"name": "mylar",
 			"platform": "linux",
+			"network": "bridgecustom",
 			"ports": [
 				"8090:8090/tcp"
 			],
@@ -570,6 +578,7 @@
 			"logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/proxy_mgr.png",
 			"name": "nginx-proxy-manager",
 			"platform": "linux",
+			"network": "bridgecustom",
 			"ports": [
 				"80:8080/tcp",
 				"81:8181/tcp",
@@ -609,6 +618,7 @@
 			"logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/ombi.png",
 			"name": "ombi",
 			"platform": "linux",
+			"network": "bridgecustom",
 			"ports": [
 				"3579:3579/tcp"
 			],
@@ -644,6 +654,7 @@
 			"logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/organizr-icon.png",
 			"name": "organizr-v2",
 			"platform": "linux",
+			"network": "bridgecustom",
 			"ports": [
 				"80/tcp"
 			],
@@ -726,6 +737,7 @@
 			"logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/radarr.png",
 			"name": "radarr",
 			"platform": "linux",
+			"network": "bridgecustom",
 			"ports": [
 				"7878:7878/tcp"
 			],
@@ -757,6 +769,7 @@
 			"logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/reactiveresume.png",
 			"name": "reactive-resume",
 			"platform": "linux",
+			"network": "bridgecustom",
 			"ports": [
 				"80/tcp"
 			],
@@ -792,6 +805,7 @@
 			"logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/sonarr-icon.png",
 			"name": "sonarr",
 			"platform": "linux",
+			"network": "bridgecustom",
 			"ports": [
 				"8989:8989/tcp"
 			],
@@ -844,6 +858,7 @@
 			"logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/ubooquity-icon.png",
 			"name": "ubooquity",
 			"platform": "linux",
+			"network": "bridgecustom",
 			"ports": [
 				"2202:2202/tcp",
 				"2203:2203/tcp"
@@ -875,6 +890,7 @@
 			"name": "watchtower",
 			"note": "It is recommended to manually update your containers but we're including this for those of you that don't care",
 			"platform": "linux",
+			"network": "bridgecustom",
 			"restart_policy": "unless-stopped",
 			"title": "Watchtower",
 			"type": 1,
@@ -895,6 +911,7 @@
 			"logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/whoogle.png",
 			"name": "whoogle",
 			"platform": "linux",
+			"network": "bridgecustom",
 			"ports": [
 				"5001:5000/tcp"
 			],
@@ -930,6 +947,7 @@
 			"logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/lidarr.png",
 			"name": "lidarr",
 			"platform": "linux",
+			"network": "bridgecustom",
 			"ports": [
 				"8686:8686/tcp"
 			],
