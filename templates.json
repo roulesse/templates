@@ -629,6 +629,11 @@
 			"platform": "linux",
 			"env": [
 				{
+					"default": "true",
+					"label": "DISABLE_IPV6",
+					"name": "DISABLE_IPV6"
+				},
+				{
 					"default": "1000",
 					"label": "PUID",
 					"name": "PUID"
