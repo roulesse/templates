@@ -87,6 +87,33 @@
 				"Tools"
 			],
 			"description": "This is a Bitwarden server API implementation written in Rust compatible with upstream Bitwarden clients*, perfect for self-hosted deployment where running the official resource-heavy service might not be ideal..",
+			"env": [
+				{
+					"default": "staging",
+					"label": "ROCKET_ENV",
+					"name": "ROCKET_ENV"
+				},
+				{
+					"default": "80",
+					"label": "ROCKET_PORT",
+					"name": "ROCKET_PORT"
+				},
+				{
+					"label": "ROCKET_WORKERS",
+					"name": "ROCKET_WORKERS",
+					"default": "10"
+				},
+				{
+					"label": "SIGNUPS_ALLOWED",
+					"name": "SIGNUPS_ALLOWED",
+					"default": "false"
+				},
+				{
+					"label": "DOMAIN",
+					"name": "DOMAIN",
+					"default": "https://bi.joffre.fr"
+				}
+			],
 			"image": "bitwardenrs/server:latest",
 			"logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/bitwarden.png",
 			"name": "bitwardenrs",
@@ -94,7 +121,8 @@
 			"platform": "linux",
 			"network": "bridgecustom",
 			"ports": [
-				":80/tcp"
+				"3013:80/tcp",
+				"3012:3012/tcp"
 			],
 			"restart_policy": "unless-stopped",
 			"title": "Bitwarden RS",
@@ -102,7 +130,7 @@
 			"volumes": [
 				{
 					"bind": "/volume1/docker/bitwardenrs",
-					"container": "/config"
+					"container": "/data"
 				}
 			]
 		},
@@ -133,7 +161,7 @@
 				"8083:8083/tcp"
 			],
 			"restart_policy": "unless-stopped",
-			"title": "Calibre Web",
+			"title": "Calibre Web - A configurer",
 			"type": 1,
 			"volumes": [
 				{
@@ -254,7 +282,7 @@
 			"platform": "linux",
 			"network": "bridgecustom",
 			"restart_policy": "unless-stopped",
-			"title": "Deluge",
+			"title": "Deluge A configurer",
 			"type": 1,
 			"volumes": [
 				{
@@ -286,6 +314,12 @@
 					"name": "GID"
 				},
 				{
+					"default": "65536",
+					"label": "TZ",
+					"name": "TZ"
+				},
+				{
+					"default": "65536",
 					"label": "TZ",
 					"name": "TZ"
 				}
@@ -348,7 +382,7 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/volume1/docker/Jackett",
+					"bind": "/volume1/docker/jackett",
 					"container": "/config"
 				},
 				{
@@ -390,7 +424,7 @@
 				"8920:8920/tcp"
 			],
 			"restart_policy": "unless-stopped",
-			"title": "Jellyfin",
+			"title": "Jellyfin - A configurer",
 			"type": 1,
 			"volumes": [
 				{
@@ -434,7 +468,7 @@
 				"9777/udp"
 			],
 			"restart_policy": "unless-stopped",
-			"title": "Kodi Headless",
+			"title": "Kodi Headless - A configurer",
 			"type": 1,
 			"volumes": [
 				{
@@ -469,7 +503,7 @@
 				"5299:5299/tcp"
 			],
 			"restart_policy": "unless-stopped",
-			"title": "LazyLibrarian",
+			"title": "LazyLibrarian - A configurer",
 			"type": 1,
 			"volumes": [
 				{
@@ -491,12 +525,12 @@
 			"description": "An Enhanced drop in replacement for Mysql",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1026",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "100",
+					"default": "101",
 					"label": "PGID",
 					"name": "PGID"
 				},
@@ -504,6 +538,21 @@
 					"label": "MYSQL_ROOT_PASSWORD",
 					"name": "MYSQL_ROOT_PASSWORD",
 					"set": ""
+				},
+				{
+					"label": "MYSQL_DATABASE",
+					"name": "MYSQL_DATABASE",
+					"dfault": "npm"
+				},
+				{
+					"label": "MYSQL_USER",
+					"name": "MYSQL_USER",
+					"default": "npm"
+				},
+				{
+					"label": "MYSQL_PASSWORD",
+					"name": "MYSQL_PASSWORD",
+					"set": "npm"
 				}
 			],
 			"image": "linuxserver/mariadb:latest",
@@ -519,7 +568,7 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/volume1/docker/Mariadb",
+					"bind": "/volume1/docker/mariadb",
 					"container": "/config"
 				}
 			]
@@ -551,7 +600,7 @@
 				"8090:8090/tcp"
 			],
 			"restart_policy": "unless-stopped",
-			"title": "Mylar",
+			"title": "Mylar - A configurer",
 			"type": 1,
 			"volumes": [
 				{
@@ -578,6 +627,18 @@
 			"logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/proxy_mgr.png",
 			"name": "nginx-proxy-manager",
 			"platform": "linux",
+			"env": [
+				{
+					"default": "1000",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "100",
+					"label": "PGID",
+					"name": "PGID"
+				}
+			],
 			"network": "bridgecustom",
 			"ports": [
 				"80:8080/tcp",
@@ -585,14 +646,26 @@
 				"443:4443/tcp"
 			],
 			"restart_policy": "unless-stopped",
-			"title": "Nginx Proxy Manager",
+			"title": "Nginx Proxy Manager - JC21",
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/volume1/docker/Nginx-Proxy",
+					"bind": "/volume1/docker/nginx-proxy-manager-jc21",
 					"container": "/config"
+				},
+				{
+					"bind": "/volume1/docker/nginx-proxy-manager-jc21/config.json",
+					"container": "/app/config/production.json"
+				},
+				{
+					"bind": "/volume1/docker/nginx-proxy-manager-jc21",
+					"container": "/data"
+				},
+				{
+					"bind": "/volume1/docker/nginx-proxy-manager-jc21/letsencrypt",
+					"container": "/etc/letsencrypt"
 				}
-			]
+				]
 		},
 		{
 			"categories": [
