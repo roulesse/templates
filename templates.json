@@ -634,12 +634,12 @@
 					"name": "DISABLE_IPV6"
 				},
 				{
-					"default": "1000",
+					"default": "1026",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "100",
+					"default": "101",
 					"label": "PGID",
 					"name": "PGID"
 				}
