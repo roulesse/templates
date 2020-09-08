@@ -1,0 +1,1055 @@
+{
+	"version": "2",
+	"templates": [
+		{
+			"categories": [
+				"Other",
+				"Tools",
+				"Authentication"
+			],
+			"description": "An open-source authentication and authorization server providing 2-factor authentication and single sign-on (SSO) for your applications via a web portal.",
+			"env": [
+				{
+					"label": "TZ",
+					"name": "TZ"
+				}
+			],
+			"image": "authelia/authelia:latest",
+			"logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/authelia.png",
+			"name": "authelia",
+			"note": "Requires a configuration.yml file in order to work. Documentation is Available \u003ca href='https://docs.authelia.com/deployment/deployment-ha'\u003ehere\u003c/a\u003e.",
+			"platform": "linux",
+			"network": "bridgecustom",
+			"ports": [
+				"9091:9091/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Authelia",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/volume1/docker/authelia",
+					"container": "/etc/authelia/"
+				}
+			]
+		},
+		{
+			"categories": [
+				"Video",
+				"Music"
+			],
+			"description": "Bazarr is a companion application to Sonarr and Radarr. It can manage and download subtitles based on your requirements. You define your preferences by TV show or movie and Bazarr takes care of everything for you.",
+			"env": [
+				{
+					"default": "1030",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "65536",
+					"label": "PGID",
+					"name": "PGID"
+				},
+				{
+					"label": "TZ",
+					"name": "TZ"
+				}
+			],
+			"image": "linuxserver/bazarr:latest",
+			"logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/bazarr.png",
+			"name": "bazarr",
+			"platform": "linux",
+			"network": "bridgecustom",
+			"ports": [
+				"6767:6767/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Bazarr",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/volume1/docker/bazarr",
+					"container": "/config"
+				},
+				{
+					"bind": "/volume1/video/Series",
+					"container": "/tv"
+				},
+				{
+					"bind": "/volume1/video/Films",
+					"container": "/movies"
+				}
+			]
+		},
+		{
+			"categories": [
+				"Other",
+				"Tools"
+			],
+			"description": "This is a Bitwarden server API implementation written in Rust compatible with upstream Bitwarden clients*, perfect for self-hosted deployment where running the official resource-heavy service might not be ideal..",
+			"env": [
+				{
+					"default": "staging",
+					"label": "ROCKET_ENV",
+					"name": "ROCKET_ENV"
+				},
+				{
+					"default": "80",
+					"label": "ROCKET_PORT",
+					"name": "ROCKET_PORT"
+				},
+				{
+					"label": "ROCKET_WORKERS",
+					"name": "ROCKET_WORKERS",
+					"default": "10"
+				},
+				{
+					"label": "SIGNUPS_ALLOWED",
+					"name": "SIGNUPS_ALLOWED",
+					"default": "false"
+				},
+				{
+					"label": "DOMAIN",
+					"name": "DOMAIN",
+					"default": "https://bi.joffre.fr"
+				}
+			],
+			"image": "bitwardenrs/server:latest",
+			"logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/bitwarden.png",
+			"name": "bitwardenrs",
+			"note": "This project is not associated with the Bitwarden project nor 8bit Solutions LLC.",
+			"platform": "linux",
+			"network": "bridgecustom",
+			"ports": [
+				"3013:80/tcp",
+				"3012:3012/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Bitwarden RS",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/volume1/docker/bitwardenrs",
+					"container": "/data"
+				}
+			]
+		},
+		{
+			"categories": [
+				"Cloud",
+				"Books"
+			],
+			"description": "Calibre Web is a web app providing a clean interface for browsing, reading and downloading eBooks using an existing Calibre database.\n\n  [br][br]\n  [b][u][span style='color: #E80000;']Configuration[/span][/u][/b][br]\n  [b]/config[/b] Where Calibre-web should store it's database[br]\n  [b]/books[/b] Path to your calibre library metadata.db file[br]",
+			"env": [
+				{
+					"default": "1000",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "100",
+					"label": "PGID",
+					"name": "PGID"
+				}
+			],
+			"image": "linuxserver/calibre-web:latest",
+			"logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/calibre-web-icon.png",
+			"name": "calibre-web",
+			"network": "bridgecustom",
+			"platform": "linux",
+			"ports": [
+				"8083:8083/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Calibre Web - A configurer",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/books",
+					"container": "/books"
+				},
+				{
+					"bind": "/volume1/docker/calibre-web",
+					"container": "/config"
+				}
+			]
+		},
+		{
+			"categories": [
+				"Downloaders"
+			],
+			"description": "Arch Linux base running Deluge, OpenVPN and Privoxy ",
+			"env": [
+				{
+					"default": "1026",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "101",
+					"label": "PGID",
+					"name": "PGID"
+				},
+				{
+					"label": "UMASK_SET",
+					"name": "UMASK_SET",
+					"set": "000"
+				},
+				{
+					"label": "STRICT_PORT_FORWARD",
+					"name": "STRICT_PORT_FORWARD",
+					"default": "no"
+				},
+				{
+					"label": "VPN_PROV",
+					"name": "VPN_PROV",
+					"default": "custom"
+				},
+				{
+					"label": "VPN_PASS",
+					"name": "VPN_PASS",
+					"default": "à remplir"
+				},
+				{
+					"label": "VPN_USER",
+					"name": "VPN_USER",
+					"default": "rules"
+				},
+				{
+					"label": "LAN_NETWORK",
+					"name": "LAN_NETWORK",
+					"default": "192.168.1.240"
+				},
+				{
+					"label": "ENABLE_PRIVOXY",
+					"name": "ENABLE_PRIVOXY",
+					"default": "yes"
+				},
+				{
+					"label": "VPN_ENABLED",
+					"name": "VPN_ENABLED",
+					"default": "yes"
+				}
+			],
+			"image": "binhex/arch-delugevpn:latest",
+			"logo": "https://avatars3.githubusercontent.com/u/1121837?s=400&u=e28e91907e9b5f1b387b14fe8ba58e31ed71827a&v=4",
+			"name": "deluge",
+			"platform": "linux",
+			"network": "bridgecustom",
+			"ports": [
+				"8112:8112/tcp",
+				"8118:8118/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Arch Deluge VPN",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/volume1/docker/arch-delugevpn",
+					"container": "/config"
+				},
+				{
+					"bind": "/volume1/downloads",
+					"container": "/data"
+				}
+			]
+		},
+		{
+			"categories": [
+				"Downloaders"
+			],
+			"description": "Deluge is a lightweight, Free Software, cross-platform BitTorrent client providing: Full Encryption, WebUI, Plugin System, Much more...",
+			"env": [
+				{
+					"default": "1000",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "100",
+					"label": "PGID",
+					"name": "PGID"
+				},
+				{
+					"label": "UMASK_SET",
+					"name": "UMASK_SET",
+					"set": "000"
+				}
+			],
+			"image": "linuxserver/deluge:latest",
+			"logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/deluge-icon.png",
+			"namme": "deluge",
+			"platform": "linux",
+			"network": "bridgecustom",
+			"restart_policy": "unless-stopped",
+			"title": "Deluge A configurer",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/volume1/docker/Deluge",
+					"container": "/config"
+				},
+				{
+					"bind": "/volume1/downloads",
+					"container": "/downloads"
+				}
+			]
+		},
+		{
+			"categories": [
+				"Video",
+				"Music",
+				"Photos"
+			],
+			"description": "Emby organizes video, music, live TV, and photos from personal media libraries and streams them to smart TVs, streaming boxes and mobile devices. This container is packaged as a standalone emby Media Server.",
+			"env": [
+				{
+					"default": "1031",
+					"label": "UID",
+					"name": "UID"
+				},
+				{
+					"default": "65536",
+					"label": "GID",
+					"name": "GID"
+				},
+				{
+					"default": "65536",
+					"label": "TZ",
+					"name": "TZ"
+				},
+				{
+					"default": "65536",
+					"label": "TZ",
+					"name": "TZ"
+				}
+			],
+			"image": "emby/embyserver:beta",
+			"logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/emby.png",
+			"name": "Emby",
+			"platform": "linux",
+			"network": "host",
+			"ports": [
+				"8096:8096/tcp",
+				"8920:8920/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Emby",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/volume1/docker/emby",
+					"container": "/config"
+				},
+				{
+					"bind": "/volume1/video/Series",
+					"container": "/tv"
+				},
+				{
+					"bind": "/volume1/video/Films",
+					"container": "/movies"
+				}
+			]
+		},
+		{
+			"categories": [
+				"Downloaders",
+				"Tools"
+			],
+			"description": "Jackett works as a proxy server it translates queries from apps like Sonarr etc into tracker-site-specific http queries and parses the html response sending results back to the requesting software.[",
+			"env": [
+				{
+					"default": "1000",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "100",
+					"label": "PGID",
+					"name": "PGID"
+				}
+			],
+			"image": "linuxserver/jackett:latest",
+			"logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/jacket-icon.png",
+			"name": "jackett",
+			"platform": "linux",
+			"network": "bridgecustom",
+			"ports": [
+				"9117:9117/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Jackett",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/volume1/docker/jackett",
+					"container": "/config"
+				},
+				{
+					"bind": "/volume1/downloads",
+					"container": "/downloads"
+				}
+			]
+		},
+		{
+			"categories": [
+				"Video",
+				"Music",
+				"Photos"
+			],
+			"description": "Jellyfin is a Free Software Media System that puts you in control of managing and streaming your media. It is an alternative to the proprietary Emby and Plex, to provide media from a dedicated server to end-user devices via multiple apps.",
+			"env": [
+				{
+					"default": "1000",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "100",
+					"label": "PGID",
+					"name": "PGID"
+				},
+				{
+					"label": "TZ",
+					"name": "TZ"
+				}
+			],
+			"image": "linuxserver/jellyfin:latest",
+			"logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/jellyfin.png",
+			"name": "jellyfin",
+			"platform": "linux",
+			"network": "bridgecustom",
+			"ports": [
+				"8096:8096/tcp",
+				"8920:8920/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Jellyfin - A configurer",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/volume1/docker/Jelllyfin",
+					"container": "/config"
+				},
+				{
+					"bind": "/volume1/video/Series",
+					"container": "/data/tvshows"
+				},
+				{
+					"bind": "/volume1/video/Films",
+					"container": "/data/movies"
+				}
+			]
+		},
+		{
+			"categories": [
+				"Video"
+			],
+			"description": "Headless installation of Kodi™ (formerly known as XBMC™), to enable library updates.",
+			"env": [
+				{
+					"default": "1000",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "100",
+					"label": "PGID",
+					"name": "PGID"
+				}
+			],
+			"image": "linuxserver/kodi-headless:latest",
+			"logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/kodi-icon.png",
+			"name": "kodi-headless",
+			"platform": "linux",
+			"network": "bridgecustom",
+			"ports": [
+				"8080/tcp",
+				"9777/udp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Kodi Headless - A configurer",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/volume1/docker/Kodi",
+					"container": "/config"
+				}
+			]
+		},
+		{
+			"categories": [
+				"Books"
+			],
+			"description": "LazyLibrarian is a program to follow authors and grab metadata for all your digital reading needs.",
+			"env": [
+				{
+					"default": "1000",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "100",
+					"label": "PGID",
+					"name": "PGID"
+				}
+			],
+			"image": "linuxserver/lazylibrarian:latest",
+			"logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/lazylibrarian-icon.png",
+			"name": "lazylibrarian",
+			"platform": "linux",
+			"network": "bridgecustom",
+			"ports": [
+				"5299:5299/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "LazyLibrarian - A configurer",
+			"type": 1,
+			"volumes": [
+				{
+					"container": "/config"
+				},
+				{
+					"container": "/downloads"
+				},
+				{
+					"container": "/books"
+				}
+			]
+		},
+		{
+			"categories": [
+				"Other",
+				"Tools"
+			],
+			"description": "An Enhanced drop in replacement for Mysql",
+			"env": [
+				{
+					"default": "1026",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "101",
+					"label": "PGID",
+					"name": "PGID"
+				},
+				{
+					"label": "MYSQL_ROOT_PASSWORD",
+					"name": "MYSQL_ROOT_PASSWORD",
+					"set": "npm"
+				},
+				{
+					"label": "MYSQL_DATABASE",
+					"name": "MYSQL_DATABASE",
+					"default": "npm"
+				},
+				{
+					"label": "MYSQL_USER",
+					"name": "MYSQL_USER",
+					"default": "npm"
+				},
+				{
+					"label": "MYSQL_PASSWORD",
+					"name": "MYSQL_PASSWORD",
+					"default": "npm"
+				}
+			],
+			"image": "jc21/mariadb-aria:latest",
+			"logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/mariadb-icon.png",
+			"name": "mariadb",
+			"platform": "linux",
+			"network": "bridgecustom",
+			"ports": [
+				"3306:3306/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "MariaDB",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/volume1/docker/mariadb",
+					"container": "/config"
+				},
+				{
+					"bind": "/volume1/docker/mariadb/mysqldb",
+					"container": "/var/lib/mysql"
+				}
+			]
+		},
+		{
+			"categories": [
+				"Downloaders",
+				"Books"
+			],
+			"description": "An automated Comic Book downloader (cbr/cbz) for use with SABnzbd, NZBGet and torrents.",
+			"env": [
+				{
+					"default": "1000",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "100",
+					"label": "PGID",
+					"name": "PGID"
+				}
+			],
+			"image": "linuxserver/mylar:latest",
+			"logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/mylar-icon.png",
+			"name": "mylar",
+			"platform": "linux",
+			"network": "bridgecustom",
+			"ports": [
+				"8090:8090/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Mylar - A configurer",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/volume1/docker/Mylar",
+					"container": "/config"
+				},
+				{
+					"bind": "/volume1/downloads",
+					"container": "/downloads"
+				},
+				{
+					"bind": "/portainer/Comics",
+					"container": "/comics"
+				}
+			]
+		},
+		{
+			"categories": [
+				"Proxy",
+				"Tools"
+			],
+			"description": "Nginx Proxy Manager enables you to easily forward to your websites running at home or otherwise, including free SSL, without having to know too much about Nginx or Letsencrypt.",
+			"image": "jc21/nginx-proxy-manager:latest",
+			"logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/proxy_mgr.png",
+			"name": "nginx-proxy-manager",
+			"platform": "linux",
+			"env": [
+				{
+					"default": "true",
+					"label": "DISABLE_IPV6",
+					"name": "DISABLE_IPV6"
+				},
+				{
+					"default": "1026",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "101",
+					"label": "PGID",
+					"name": "PGID"
+				}
+			],
+			"network": "bridgecustom",
+			"ports": [
+				"80:8080/tcp",
+				"81:8181/tcp",
+				"443:4443/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Nginx Proxy Manager - JC21",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/volume1/docker/nginx-proxy-manager-jc21",
+					"container": "/config"
+				},
+				{
+					"bind": "/volume1/docker/nginx-proxy-manager-jc21/config.json",
+					"container": "/app/config/production.json"
+				},
+				{
+					"bind": "/volume1/docker/nginx-proxy-manager-jc21",
+					"container": "/data"
+				},
+				{
+					"bind": "/volume1/docker/nginx-proxy-manager-jc21/letsencrypt",
+					"container": "/etc/letsencrypt"
+				}
+				]
+		},
+		{
+			"categories": [
+				"Downloaders",
+				"Other",
+				"Video",
+				"Tools"
+			],
+			"description": "Ombi allows you to host your own Plex Request and user management system. ",
+			"env": [
+				{
+					"default": "1000",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "100",
+					"label": "PGID",
+					"name": "PGID"
+				}
+			],
+			"image": "linuxserver/ombi:latest",
+			"logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/ombi.png",
+			"name": "ombi",
+			"platform": "linux",
+			"network": "bridgecustom",
+			"ports": [
+				"3579:3579/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Ombi",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/volume1/docker/Ombi",
+					"container": "/config"
+				}
+			]
+		},
+		{
+			"categories": [
+				"Other",
+				"Tools"
+			],
+			"description": "Organizr allows you to setup Tabs that will be loaded all in one webpage. You can then work on your server with ease.",
+			"env": [
+				{
+					"default": "1000",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "100",
+					"label": "PGID",
+					"name": "PGID"
+				}
+			],
+			"image": "organizrtools/organizr-v2:php-fpm",
+			"logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/organizr-icon.png",
+			"name": "organizr-v2",
+			"platform": "linux",
+			"network": "bridgecustom",
+			"ports": [
+				"80/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Organizr v2",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/volume1/docker/Organizr",
+					"container": "/config"
+				}
+			]
+		},
+		{
+			"categories": [
+				"Video",
+				"Music",
+				"Photos"
+			],
+			"description": "Your favorite movies, TV, music, web shows, podcasts, and more, all streamed to your favorite screens.",
+			"env": [
+				{
+					"default": "1000",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "100",
+					"label": "PGID",
+					"name": "PGID"
+				},
+				{
+					"label": "VERSION",
+					"name": "VERSION",
+					"set": "latest"
+				}
+			],
+			"image": "linuxserver/plex:latest",
+			"logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/plex-icon.png",
+			"name": "plex",
+			"network": "host",
+			"platform": "linux",
+			"restart_policy": "unless-stopped",
+			"title": "Plex",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/volume1/docker/Plex",
+					"container": "/config"
+				},
+				{
+					"bind": "/volume1/video/Series",
+					"container": "/tv"
+				},
+				{
+					"bind": "/volume1/video/Films",
+					"container": "/movies"
+				}
+			]
+		},
+		{
+			"categories": [
+				"Downloaders",
+				"Video"
+			],
+			"description": "Radarr - A fork of Sonarr to work with movies à la Couchpotato.",
+			"env": [
+				{
+					"default": "1000",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "100",
+					"label": "PGID",
+					"name": "PGID"
+				}
+			],
+			"image": "linuxserver/radarr:latest",
+			"logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/radarr.png",
+			"name": "radarr",
+			"platform": "linux",
+			"network": "bridgecustom",
+			"ports": [
+				"7878:7878/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Radarr",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/volume1/docker/Radarr",
+					"container": "/config"
+				},
+				{
+					"bind": "/volume1/downloads",
+					"container": "/downloads"
+				},
+				{
+					"bind": "/volume1/video/Films",
+					"container": "/movies"
+				}
+			]
+		},
+		{
+			"categories": [
+				"Other",
+				"Tools"
+			],
+			"description": "A one-of-a-kind resume builder that's not out to get your data. Completely secure, customizable, portable, open-source and free forever.",
+			"image": "amruthpillai/reactive-resume:latest",
+			"logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/reactiveresume.png",
+			"name": "reactive-resume",
+			"platform": "linux",
+			"network": "bridgecustom",
+			"ports": [
+				"80/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Reactive-Resume",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/volume1/docker/ReactiveResume",
+					"container": "/usr/src/app"
+				}
+			]
+		},
+		{
+			"categories": [
+				"Downloaders",
+				"Video"
+			],
+			"description": "Sonarr (formerly NZBdrone) is a PVR for usenet and bittorrent users. It can monitor multiple RSS feeds for new episodes of your favorite shows and will grab, sort and rename them. It can also be configured to automatically upgrade the quality of files already downloaded when a better quality format becomes available.",
+			"env": [
+				{
+					"default": "1000",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "100",
+					"label": "PGID",
+					"name": "PGID"
+				}
+			],
+			"image": "linuxserver/sonarr:latest",
+			"logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/sonarr-icon.png",
+			"name": "sonarr",
+			"platform": "linux",
+			"network": "bridgecustom",
+			"ports": [
+				"8989:8989/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Sonarr",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/volume1/docker/Sonarr",
+					"container": "/config"
+				},
+				{
+					"bind": "/dev/rtc",
+					"container": "/dev/rtc"
+				},
+				{
+					"bind": "/volume1/video/Series",
+					"container": "/tv"
+				},
+				{
+					"bind": "/volume1/downloads",
+					"container": "/downloads"
+				}
+			]
+		},
+		{
+			"categories": [
+				"Cloud",
+				"Books"
+			],
+			"description": "Ubooquity is a free, lightweight and easy-to-use home server for your comics and ebooks. Use it to access your files from anywhere, with a tablet, an e-reader, a phone or a computer.",
+			"env": [
+				{
+					"label": "MAXMEM",
+					"name": "MAXMEM",
+					"set": "512"
+				},
+				{
+					"default": "1000",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "100",
+					"label": "PGID",
+					"name": "PGID"
+				}
+			],
+			"image": "linuxserver/ubooquity:latest",
+			"logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/ubooquity-icon.png",
+			"name": "ubooquity",
+			"platform": "linux",
+			"network": "bridgecustom",
+			"ports": [
+				"2202:2202/tcp",
+				"2203:2203/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Ubooquity",
+			"type": 1,
+			"volumes": [
+				{
+					"container": "/books"
+				},
+				{
+					"container": "/comics"
+				},
+				{
+					"container": "/config"
+				}
+			]
+		},
+		{
+			"categories": [
+				"Other",
+				"Tools",
+				"Maintenance"
+			],
+			"description": "With watchtower you can update the running version of your containerized app simply by pushing a new image to the Docker Hub or your own image registry. Watchtower will pull down your new image, gracefully shut down your existing container and restart it with the same options that were used when it was deployed initially.",
+			"image": "containrrr/watchtower:latest",
+			"logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/watchtower.png",
+			"name": "watchtower",
+			"note": "It is recommended to manually update your containers but we're including this for those of you that don't care",
+			"platform": "linux",
+			"network": "bridgecustom",
+			"restart_policy": "unless-stopped",
+			"title": "Watchtower",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/var/run/docker.sock",
+					"container": "/var/run/docker.sock"
+				}
+			]
+		},
+		{
+			"categories": [
+				"Other",
+				"Tools"
+			],
+			"description": "Self-hosted, ad-free, privacy-respecting Google metasearch engine.",
+			"image": "benbusby/whoogle-search:latest",
+			"logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/whoogle.png",
+			"name": "whoogle",
+			"platform": "linux",
+			"network": "bridgecustom",
+			"ports": [
+				"5001:5000/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Whoogle",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/volume1/docker/Whoogle",
+					"container": "/config"
+				}
+			]
+		},
+		{
+			"categories": [
+				"Downloaders",
+				"Music"
+			],
+			"description": "Lidarr is a music collection manager for Usenet and BitTorrent users.",
+			"env": [
+				{
+					"default": "1000",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "100",
+					"label": "PGID",
+					"name": "PGID"
+				}
+			],
+			"image": "linuxserver/lidarr:latest",
+			"logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/lidarr.png",
+			"name": "lidarr",
+			"platform": "linux",
+			"network": "bridgecustom",
+			"ports": [
+				"8686:8686/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "lidarr",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/volume1/docker/Lidarr",
+					"container": "/config"
+				},
+				{
+					"bind": "/volume1/downloads",
+					"container": "/downloads"
+				},
+				{
+					"bind": "/portainer/Music",
+					"container": "/music"
+				}
+			]
+		}
+	]
+}
