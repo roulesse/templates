@@ -631,23 +631,6 @@
 			"logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/proxy_mgr.png",
 			"name": "nginx-proxy-manager",
 			"platform": "linux",
-			"env": [
-				{
-					"default": "true",
-					"label": "DISABLE_IPV6",
-					"name": "DISABLE_IPV6"
-				},
-				{
-					"default": "1026",
-					"label": "PUID",
-					"name": "PUID"
-				},
-				{
-					"default": "101",
-					"label": "PGID",
-					"name": "PGID"
-				}
-			],
 			"network": "bridgecustom",
 			"ports": [
 				"8080:8080/tcp",
