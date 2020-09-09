@@ -655,6 +655,7 @@
 			"network": "bridgecustom",
 			"ports": [
 				"8080:8080/tcp",
+				"3000:3000/tcp",
 				"8181:8181/tcp",
 				"4443:4443/tcp"
 			],
