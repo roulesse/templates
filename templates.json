@@ -568,10 +568,6 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/volume1/docker/mariadb",
-					"container": "/config"
-				},
-				{
 					"bind": "/volume1/docker/mariadb/mysqldb",
 					"container": "/var/lib/mysql"
 				},
