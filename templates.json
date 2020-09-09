@@ -574,6 +574,10 @@
 				{
 					"bind": "/volume1/docker/mariadb/mysqldb",
 					"container": "/var/lib/mysql"
+				},
+				{
+					"bind": "/volume1/docker/mariadb/log",
+					"container": "/var/lib/mysql/mysql-bin"
 				}
 			]
 		},
@@ -650,18 +654,14 @@
 			],
 			"network": "bridgecustom",
 			"ports": [
-				"80:8080/tcp",
-				"81:8181/tcp",
-				"443:4443/tcp"
+				"8080:8080/tcp",
+				"8181:8181/tcp",
+				"4443:4443/tcp"
 			],
 			"restart_policy": "unless-stopped",
 			"title": "Nginx Proxy Manager - JC21",
 			"type": 1,
 			"volumes": [
-				{
-					"bind": "/volume1/docker/nginx-proxy-manager-jc21",
-					"container": "/config"
-				},
 				{
 					"bind": "/volume1/docker/nginx-proxy-manager-jc21/config.json",
 					"container": "/app/config/production.json"
