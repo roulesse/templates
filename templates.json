@@ -16,52 +16,52 @@
 				},
 				{
 					"label": "SSL_CERT_FILE",
-					"name": "SSL_CERT_FILE"
+					"name": "SSL_CERT_FILE",
 					"default": "/etc/ssl/certs/ca-certificates.crt"
 				},
 				{
 					"label": "AUTOCERT_DIR",
-					"name": "AUTOCERT_DIR"
+					"name": "AUTOCERT_DIR",
 					"default": "/data/autocert"
 				},
 				{
 					"label": "POLICY",
-					"name": "POLICY"
+					"name": "POLICY",
 					"default": "IyBwb2xpY3kueWFtbA0KI0JpdHdhcmRlbg0KLSBmcm9tOiBodHRwczovL2JpLmpvZmZyZS5mcg0KICB0bzogaHR0cDovL2JpdHdhcmRlbnJzDQogIGFsbG93ZWRfdXNlcnM6DQogICAgLSBqdWxpZW4uam9mZnJlQGdtYWlsLmNvbQ0KI0phY2tldHQNCi0gZnJvbTogaHR0cHM6Ly9qYS5qb2ZmcmUuZnINCiAgdG86IGh0dHA6Ly9qYWNrZXR0OjkxMTcNCiAgYWxsb3dlZF91c2VyczoNCiAgICAtIGp1bGllbi5qb2ZmcmVAZ21haWwuY29tDQojRGVsdWdlDQotIGZyb206IGh0dHBzOi8vZGUuam9mZnJlLmZyDQogIHRvOiBodHRwOi8vZGVsdWdlOjgxMTINCiAgYWxsb3dlZF91c2VyczoNCiAgICAtIGp1bGllbi5qb2ZmcmVAZ21haWwuY29tDQojU29uYXJyDQotIGZyb206IGh0dHBzOi8vc28uam9mZnJlLmZyDQogIHRvOiBodHRwOi8vc29uYXJyOjg5ODkNCiAgYWxsb3dlZF91c2VyczoNCiAgICAtIGp1bGllbi5qb2ZmcmVAZ21haWwuY29tDQojUmFkYXJyDQotIGZyb206IGh0dHBzOi8vcmEuam9mZnJlLmZyDQogIHRvOiBodHRwOi8vcmFkYXJyOjc4NzgNCiAgYWxsb3dlZF91c2VyczoNCiAgICAtIGp1bGllbi5qb2ZmcmVAZ21haWwuY29tDQojQmF6YXJyDQotIGZyb206IGh0dHBzOi8vYmEuam9mZnJlLmZyDQogIHRvOiBodHRwOi8vYmF6YXJyOjY3NjcNCiAgYWxsb3dlZF91c2VyczoNCiAgICAtIGp1bGllbi5qb2ZmcmVAZ21haWwuY29t"
 				},
 				{
 					"label": "INSECURE_SERVER",
-					"name": "INSECURE_SERVER"
+					"name": "INSECURE_SERVER",
 					"default": "TRUE"
 				},
 				{
 					"label": "IDP_CLIENT_SECRET",
-					"name": "IDP_CLIENT_SECRET"
+					"name": "IDP_CLIENT_SECRET",
 					"default": "XLLu72tb8s_FwnVYwXWwT8OJ"
 				},
 				{
 					"label": "IDP_CLIENT_ID",
-					"name": "IDP_CLIENT_ID"
+					"name": "IDP_CLIENT_ID",
 					"default": "1099140170529-nv9tt817lqab3vs6ak8jqc13995oo0mq.apps.googleusercontent.com"
 				},
 				{
 					"label": "IDP_PROVIDER",
-					"name": "IDP_PROVIDER"
+					"name": "IDP_PROVIDER",
 					"default": "google"
 				},
 				{
 					"label": "COOKIE_SECRET",
-					"name": "COOKIE_SECRET"
+					"name": "COOKIE_SECRET",
 					"default": "V9OooYkN9i812E4KdlH8xkLvgMlnaKx0/6Zh0ZT5wNQ="
 				},
 				{
 					"label": "AUTHENTICATE_SERVICE_URL",
-					"name": "AUTHENTICATE_SERVICE_URL"
+					"name": "AUTHENTICATE_SERVICE_URL",
 					"default": "https://auth.joffre.fr"
 				},
 				{
 					"label": "SHARED_SECRET",
-					"name": "SHARED_SECRET"
+					"name": "SHARED_SECRET",
 					"default": "EFdzaeuzX4nA/CMheyGD0Q80NT4PtqdQ3Z8SjHhBS44="
 				}
 			],
