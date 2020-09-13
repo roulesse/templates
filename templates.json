@@ -64,7 +64,7 @@
 					"name": "SHARED_SECRET",
 					"default": "EFdzaeuzX4nA/CMheyGD0Q80NT4PtqdQ3Z8SjHhBS44="
 				}
-			],
+            ],  
 			"image": "pomerium/pomerium:latest",
 			"logo": "https://avatars3.githubusercontent.com/u/46059110?s=200&v=4",
 			"name": "pomerium",
@@ -76,9 +76,8 @@
 			],
 			"restart_policy": "unless-stopped",
 			"title": "Pomerium",
-			"type": 1,
-			]
-			},
+			"type": 1
+        },
 		{
 			"categories": [
 				"Other",
@@ -109,7 +108,7 @@
 					"bind": "/volume1/docker/authelia",
 					"container": "/etc/authelia/"
 				}
-			]
+			],
 		},
 		{
 			"categories": [
