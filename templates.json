@@ -785,12 +785,12 @@
 			"description": "Radarr - A fork of Sonarr to work with movies à la Couchpotato.",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1029",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "100",
+					"default": "65536",
 					"label": "PGID",
 					"name": "PGID"
 				}
@@ -853,17 +853,17 @@
 			"description": "Sonarr (formerly NZBdrone) is a PVR for usenet and bittorrent users. It can monitor multiple RSS feeds for new episodes of your favorite shows and will grab, sort and rename them. It can also be configured to automatically upgrade the quality of files already downloaded when a better quality format becomes available.",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1028",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "100",
+					"default": "65536",
 					"label": "PGID",
 					"name": "PGID"
 				}
 			],
-			"image": "linuxserver/sonarr:latest",
+			"image": "linuxserver/sonarr:preview",
 			"logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/sonarr-icon.png",
 			"name": "sonarr",
 			"platform": "linux",
@@ -876,7 +876,7 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/volume1/docker/Sonarr",
+					"bind": "/volume1/docker/sonarr",
 					"container": "/config"
 				},
 				{
