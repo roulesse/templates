@@ -77,7 +77,8 @@
 			"restart_policy": "unless-stopped",
 			"title": "Pomerium",
 			"type": 1,
-		},
+			]
+			},
 		{
 			"categories": [
 				"Other",
