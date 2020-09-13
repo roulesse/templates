@@ -108,7 +108,7 @@
 					"bind": "/volume1/docker/authelia",
 					"container": "/etc/authelia/"
 				}
-			],
+			]
 		},
 		{
 			"categories": [
