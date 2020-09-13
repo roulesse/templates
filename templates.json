@@ -795,7 +795,7 @@
 					"name": "PGID"
 				}
 			],
-			"image": "linuxserver/radarr:latest",
+			"image": "linuxserver/radarr:preview",
 			"logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/radarr.png",
 			"name": "radarr",
 			"platform": "linux",
@@ -808,7 +808,7 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/volume1/docker/Radarr",
+					"bind": "/volume1/docker/radarr",
 					"container": "/config"
 				},
 				{
