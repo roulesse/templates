@@ -872,7 +872,7 @@
 					"name": "PGID"
 				}
 			],
-			"image": "linuxserver/radarr:nigthly",
+			"image": "linuxserver/radarr:nightly",
 			"logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/radarr.png",
 			"name": "radarr",
 			"platform": "linux",
