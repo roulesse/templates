@@ -315,6 +315,7 @@
 			"network": "bridgecustom",
 			"ports": [
 				"8112:8112/tcp",
+				"58846:58846/tcp",
 				"8118:8118/tcp"
 			],
 			"restart_policy": "unless-stopped",
