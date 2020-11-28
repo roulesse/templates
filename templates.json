@@ -673,7 +673,7 @@
 					"name": "PGID"
 				}
 			],
-			"image": "linuxserver/mylar:latest",
+			"image": "linuxserver/mylar3:latest",
 			"logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/mylar-icon.png",
 			"name": "mylar",
 			"platform": "linux",
