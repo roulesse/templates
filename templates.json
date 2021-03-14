@@ -941,7 +941,7 @@
 					"name": "PGID"
 				}
 			],
-			"image": "linuxserver/sonarr:preview",
+			"image": "linuxserver/sonarr:develop",
 			"logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/sonarr-icon.png",
 			"name": "sonarr",
 			"platform": "linux",
