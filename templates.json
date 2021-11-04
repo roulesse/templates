@@ -191,9 +191,9 @@
 					"default": "https://bi.joffre.fr"
 				}
 			],
-			"image": "bitwardenrs/server:latest",
+			"image": "vaultwarden/server:latest",
 			"logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/bitwarden.png",
-			"name": "bitwardenrs",
+			"name": "vaultwarden",
 			"note": "This project is not associated with the Bitwarden project nor 8bit Solutions LLC.",
 			"platform": "linux",
 			"network": "bridgecustom",
@@ -202,7 +202,7 @@
 				"3012:3012/tcp"
 			],
 			"restart_policy": "unless-stopped",
-			"title": "Bitwarden RS",
+			"title": "Vaultwarden",
 			"type": 1,
 			"volumes": [
 				{
