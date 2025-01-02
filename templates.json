@@ -132,7 +132,7 @@
 					"name": "TZ"
 				}
 			],
-			"image": "linuxserver/bazarr:development",
+			"image": "hotio/bazarr:nightly",
 			"logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/bazarr.png",
 			"name": "bazarr",
 			"platform": "linux",
